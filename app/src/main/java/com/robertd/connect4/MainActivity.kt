@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         createBoard()
+
     }
 
     private fun createBoard() {
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
                 val layoutParams = GridLayout.LayoutParams().apply {
                     width = 0
-                    height = GridLayout.LayoutParams.WRAP_CONTENT
+                    height = 220
                     columnSpec = GridLayout.spec(col, 1f)
                     rowSpec = GridLayout.spec(row, 1f)
                     setMargins(2, 2, 2, 2)
@@ -44,6 +46,17 @@ class MainActivity : AppCompatActivity() {
                 gridLayout.addView(button, layoutParams)
                 board[row][col] = button
             }
+        }
+
+        setPlayerTurnText()
+    }
+
+    private fun setPlayerTurnText() {
+        val playersTurn: TextView = findViewById(R.id.players_turn)
+        if (player1Turn) {
+            playersTurn.text = "Player 1's turn (Red Cross)"
+        } else {
+            playersTurn.text = "Player 2's turn (Blue Circle)"
         }
     }
 
@@ -91,6 +104,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             player1Turn = !player1Turn
+            setPlayerTurnText()
         }
     }
 
@@ -182,6 +196,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Suppress("UNUSED_PARAMETER")
+    // view is not used but the method expects it as a signature
     fun resetGame(view: View) {
         for (row in 0 until 6) {
             for (col in 0 until 7) {

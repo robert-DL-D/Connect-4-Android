@@ -16,6 +16,13 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/players_turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+
         <!-- Create a 6x7 grid of buttons representing the game board -->
         <GridLayout
             android:id="@+id/gridLayout"
@@ -23,82 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:columnCount="7"
-            android:rowCount="6">
-
-            <!--<Button
-                android:id="@+id/button_00"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_01"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_03"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_04"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_05"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_06"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_07"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />
-
-            <Button
-                android:id="@+id/button_08"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text=" "
-                android:onClick="dropPiece" />-->
-            <!-- Add buttons for the rest of the cells (6x7) -->
-
-        </GridLayout>
+            android:rowCount="6"></GridLayout>
 
         <Button
             android:id="@+id/button_reset"
